@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Home from './screens/Home';
-import Loans from './screens/Loans';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Dashboard from './screens/Dashboard';
