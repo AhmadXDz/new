@@ -88,7 +88,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="container animate-fade" style={{ padding: '40px 24px' }}>
+    <div className="container animate-fade" style={{ padding: '100px 24px' }}>
       <header style={{ marginBottom: '40px' }}>
         <h1>{t('common.dashboard')}</h1>
         <p style={{ color: 'var(--text-2)' }}>
