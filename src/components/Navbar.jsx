@@ -41,7 +41,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t('common.home'), path: '/' },
-    { name: t('common.loans'), path: '/loans' },
+    { name: t('common.loans'), path: '/#loans-section' },
     ...(user ? [{ name: t('common.dashboard'), path: '/dashboard' }] : []),
   ];
 
@@ -99,14 +99,14 @@ const Navbar = () => {
                 key={link.path} 
                 to={link.path}
                 onClick={(e) => {
-                  if (location.pathname === '/') {
-                    if (isLoansPath) {
+                  if (isLoansPath) {
+                    if (location.pathname === '/') {
                       e.preventDefault();
                       document.getElementById('loans-section')?.scrollIntoView({ behavior: 'smooth' });
-                    } else if (isHomePath) {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
+                  } else if (isHomePath && location.pathname === '/') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }
                 }}
                 style={{ 
