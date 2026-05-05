@@ -89,10 +89,16 @@ const Navbar = () => {
         <div style={{ display: 'flex', gap: '30px' }}>
           {navLinks.map((link) => {
             const isHomePath = link.path === '/';
-            const isLoansPath = link.path === '/loans';
-            const isHomeActive = isHomePath && activeSection === 'home' && location.pathname === '/';
-            const isLoansActive = isLoansPath && (activeSection === 'loans' || location.pathname === '/loans');
-            const isActive = isHomeActive || isLoansActive || (location.pathname === link.path && !isHomePath && !isLoansPath);
+            const isLoansPath = link.path.includes('#loans-section');
+            
+            // Only show Loans as active if we are on the Home page AND scrolled to that section
+            const isHomeActive = isHomePath && location.pathname === '/' && activeSection === 'home';
+            const isLoansActive = isLoansPath && location.pathname === '/' && activeSection === 'loans';
+            
+            // For other pages, use standard pathname matching
+            const isOtherActive = !isHomePath && !isLoansPath && location.pathname === link.path;
+            
+            const isActive = isHomeActive || isLoansActive || isOtherActive;
             
             return (
               <Link 
