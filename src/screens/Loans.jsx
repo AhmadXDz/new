@@ -13,7 +13,7 @@ const Loans = () => {
   ];
 
   return (
-    <div className="container animate-fade" style={{ padding: '60px 24px' }}>
+    <div className="container animate-fade" style={{ padding: '100px 24px' }}>
       <header style={{ textAlign: 'center', marginBottom: '60px' }}>
         <h1 style={{ marginBottom: '20px' }}>{t('loans.title')}</h1>
         <p style={{ color: 'var(--text-2)', maxWidth: '600px', margin: '0 auto' }}>

@@ -114,7 +114,7 @@ const Home = () => {
       </section>
 
       {/* Features/Loans Section */}
-      <section id="loans-section" className="container" style={{ padding: '80px 24px' }}>
+      <section id="loans-section" className="container" style={{ padding: '80px 24px', scrollMarginTop: '100px' }}>
         <h2 style={{ textAlign: 'center', marginBottom: '50px' }}>{t('loans.title')}</h2>
 
         <div style={{
